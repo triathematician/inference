@@ -1,3 +1,7 @@
+apikey.txt
+target/
+.idea/
+
 # Compiled class file
 *.class
 
