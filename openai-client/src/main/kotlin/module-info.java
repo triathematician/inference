@@ -13,5 +13,6 @@ module triathematician.dljtesting {
 
     opens org.tri.openai.api.dto to com.fasterxml.jackson.databind, kotlin.reflect;
 
+    exports org.tri.openai;
     exports org.tri.openai.api;
 }

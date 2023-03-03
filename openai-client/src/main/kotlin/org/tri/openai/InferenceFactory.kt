@@ -9,8 +9,8 @@ import java.io.File
 
 class InferenceFactory {
 
-    private val apiKey by lazy { File("apikey.txt").readText() }
-    private val client by lazy { OpenAiRestClient("https://api.openai.com/", apiKey) }
+    private val apiKey = File("apikey.txt").readText()
+    private val client = OpenAiRestClient("https://api.openai.com/", apiKey)
 
     fun chatGpt35Turbo() = object : Chat {
         override suspend fun chat(input: String): String {
@@ -19,7 +19,7 @@ class InferenceFactory {
                     ChatMessage("user", input)
                 ))
             )
-            return res.choices[0].message.content
+            return res.choices[0].message.content.trim()
         }
     }
 
