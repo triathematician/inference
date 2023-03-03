@@ -7,8 +7,11 @@ module triathematician.dljtesting {
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.kotlin;
     requires okhttp3;
+    requires retrofit2;
+    requires retrofit2.converter.jackson;
+    requires okhttp3.logging;
 
-    opens org.tri.openai to com.fasterxml.jackson.databind;
+    opens org.tri.openai.api.dto to com.fasterxml.jackson.databind, kotlin.reflect;
 
-    exports org.tri.openai;
+    exports org.tri.openai.api;
 }

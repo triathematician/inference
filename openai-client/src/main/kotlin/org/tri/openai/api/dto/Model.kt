@@ -1,9 +1,4 @@
-package org.tri.openai
-
-data class ResponseWrapper(
-    val `object`: String,
-    val data: List<Model>
-)
+package org.tri.openai.api.dto
 
 data class Model(
     val id: String,
@@ -30,8 +25,7 @@ data class ModelPermission(
     val is_blocking: Boolean
 )
 
-fun main() {
-    val client = OpenAiClient()
-    val models = client.listModels()
-    println(models.map { it.id }.sorted().joinToString("\n"))
-}
+data class ModelResponseWrapper(
+    val `object`: String,
+    val data: List<Model>
+)
